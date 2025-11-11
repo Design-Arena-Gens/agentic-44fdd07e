@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0f1115;
+  --text: #e5e7eb;
+  --subtle: #9ca3af;
+  --accent: #f97316;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(1200px 600px at 80% -10%, rgba(249, 115, 22, 0.12), transparent 60%),
+              radial-gradient(1000px 500px at -10% 20%, rgba(249, 115, 22, 0.08), transparent 60%),
+              var(--bg);
+  color: var(--text);
+}
+
+/* Subtle animated grid overlay */
+.bg-grid {
+  background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(circle at 60% 20%, black 50%, transparent 85%);
+}
+
+/* Smooth */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.08);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.02);
+}
+
+/* Selection */
+::selection {
+  background: rgba(249, 115, 22, 0.25);
+  color: var(--text);
+}
+
+/*******************
+ Components helpers
+*******************/
+.container-gutter {
+  @apply px-6 md:px-10 lg:px-16;
+}
+
+.section {
+  @apply container-gutter max-w-6xl mx-auto py-20 md:py-28;
+}
+
+.card {
+  @apply bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-colors;
+}
+
+.button-primary {
+  @apply inline-flex items-center gap-2 rounded-full px-6 py-3 bg-accent text-white font-medium shadow-glow hover:brightness-110 active:brightness-90 transition;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #ffffff, #f5f2ee, #f97316);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
